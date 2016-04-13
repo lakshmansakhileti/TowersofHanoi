@@ -7,11 +7,11 @@ import com.pramati.lang.Tower
 import com.pramati.util.Util
 
 object TowersOfHanoiRunner {
-  val destination: Tower = new Tower()
-  val source: Tower = new Tower()
-  val temp: Tower = new Tower()
-  val hanoi: TowersOfHanoi = new TowersOfHanoi()
-  val util: Util = new Util()
+  val destination: Tower = new Tower
+  val source: Tower = new Tower
+  val temp: Tower = new Tower
+  val hanoi: TowersOfHanoi = new TowersOfHanoi
+  val util: Util = new Util
 
   def main(args: Array[String]) {
     var choice:Int = 0
@@ -27,22 +27,27 @@ object TowersOfHanoiRunner {
 
         var value = 0
         do {
-          value = util.readInput();
-          val addDisc = source.addDisc(value);
+          value = util.readInput()
+          val addDisc = source.addDisc(value)
           if (!addDisc) {
-            println("Your input is not added to tower " + value);
+            println("Your disc size is bigger than eixt  " + value+" So you can not insert.")
           }
-        } while (value != 0);
+        } while (value != 0)
 
-        println("your entered values are " + source);
+        println("Discs on Source Tower " + source)
 
       case 2 =>
-        hanoi.moveDisc(source.size, source, destination, temp);
-        println("your destination is " + destination);
-        println("your source is " + source);
-        println("your temp is " + temp);
+        println("Discs on Destination Tower " + destination)
+        println("Discs on Source Tower " + source)
+        println(" Discs on temparary Tower " + temp)
+
+        hanoi.moveDisc(source.size, source, destination, temp)
+
+        println("Discs on Destination Tower " + destination)
+        println("Discs on Source Tower " + source)
+        println(" Discs on temparary Tower " + temp)
       case 0 =>
-        println("Thank you run again...");
+        println("Thank you run again...")
 
     }
   }

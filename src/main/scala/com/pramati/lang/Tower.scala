@@ -21,7 +21,6 @@ class Tower {
       } else {
         false
       }
-
     }
   }
 
