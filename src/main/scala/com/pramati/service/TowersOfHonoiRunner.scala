@@ -3,6 +3,7 @@ package com.pramati.service
 /**
   * Created by lakshmanar on 13/4/16.
   */
+
 import com.pramati.lang.Tower
 import com.pramati.util.Util
 
@@ -14,11 +15,11 @@ object TowersOfHanoiRunner {
   val util: Util = new Util
 
   def main(args: Array[String]) {
-    var choice:Int = 0
+    var choice: Int = 0
     do {
       choice = util.readChoice();
       processUserChoice(choice);
-    }while (choice !=0);
+    } while (choice != 0);
   }
 
   def processUserChoice(choice: Int): Unit = {
@@ -30,7 +31,7 @@ object TowersOfHanoiRunner {
           value = util.readInput()
           val addDisc = source.addDisc(value)
           if (!addDisc) {
-            println("Your disc size is bigger than eixt  " + value+" So you can not insert.")
+            println("Your disc size is bigger than eixt  " + value + " So you can not insert.")
           }
         } while (value != 0)
 
@@ -48,6 +49,8 @@ object TowersOfHanoiRunner {
         println(" Discs on temparary Tower " + temp)
       case 0 =>
         println("Thank you run again...")
+      case _ =>
+        println("Plaeas enter valid option.")
 
     }
   }

@@ -3,6 +3,7 @@ package com.pramati.lang
 /**
   * Created by lakshmanar on 13/4/16.
   */
+
 import scala.collection.mutable.Stack
 
 class Tower {
@@ -15,7 +16,7 @@ class Tower {
       true
     } else {
       val temp: Int = tower.top
-      if (inputDisc <= temp) {
+      if (inputDisc >= temp) {
         tower.push(inputDisc)
         true
       } else {
